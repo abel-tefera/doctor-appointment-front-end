@@ -52,7 +52,7 @@ const NewAppointmentPage = () => {
     return () => {
       dispatch(resetStatus());
     };
-  }, [doctors, fetchStatus]);
+  }, [doctors, fetchStatus, appointmentDoctor]);
 
   useEffect(() => {
     if (

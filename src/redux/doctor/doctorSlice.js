@@ -56,7 +56,9 @@ export const doctorSlice = createSlice({
       state.doctors = state.doctors.filter((doctor) => doctor.id !== doctorId);
     },
     setClickedDoctor: (state, action) => {
-      state.appointmentDoctor = state.doctors.find(({ id }) => id === action.payload);
+      if (state.doctors.length > 0) {
+        state.appointmentDoctor = state.doctors.find(({ id }) => id === action.payload);
+      }
     },
   },
   extraReducers(builder) {
